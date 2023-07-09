@@ -16,6 +16,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     void positiveTest() {
+
         mainPage
                 .openMyShows()
                 .clickLoginHeader()

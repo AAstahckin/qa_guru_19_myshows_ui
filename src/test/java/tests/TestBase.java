@@ -9,15 +9,18 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import page.components.PopUpCookieComponent;
 
 import java.util.Map;
 
 public class TestBase {
 
-
+    public PopUpCookieComponent popUpCookieComponent = new PopUpCookieComponent();
 
     @BeforeAll
     static void configure() {
+
+
         Configuration.baseUrl = System.getProperty("base_url", "https://myshows.me/");
         String[] browser = System.getProperty("browser", "chrome:100.0").split(":");
         Configuration.browser = browser[0];
