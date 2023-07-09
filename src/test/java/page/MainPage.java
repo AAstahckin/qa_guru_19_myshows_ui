@@ -15,7 +15,6 @@ public class MainPage extends TestBase {
     SelenideElement
             loginHeader = $(".Login-header"),
             loginInput = $(".login-form__login"),
-            pageMain = $(".Page-main"),
             homeSection = $(".Home-section .Grid-in"),
 
             passwordInput = $(".login-form__password");
@@ -36,14 +35,5 @@ public class MainPage extends TestBase {
         loginHeader.shouldHave(Condition.visible).hover().click();
         return this;
     }
-
-    public MainPage check(String login, String password){
-        loginHeader.shouldHave(Condition.visible).hover().click();
-        loginInput.setValue(login);
-        passwordInput.setValue(password).pressEnter();
-        return this;
-    }
-
-
 
 }
