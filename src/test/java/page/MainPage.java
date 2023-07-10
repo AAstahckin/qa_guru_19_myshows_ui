@@ -27,12 +27,9 @@ public class MainPage extends TestBase {
 
     public MainPage openMyShows() {
         open("");
-        popUpCookieComponent.clickAgreeButton();
-        return this;
-    }
-
-    public MainPage checkTittle() {
         homeSection.shouldHave(visible, ofSeconds(8));
+
+        popUpCookieComponent.clickAgreeButton();
         return this;
     }
 
@@ -53,6 +50,7 @@ public class MainPage extends TestBase {
     }
 
     public MainPage searchInput(String value) {
+        searchInput.click();
         searchInput.setValue(value);
         return this;
     }

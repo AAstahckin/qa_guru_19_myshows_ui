@@ -15,7 +15,6 @@ public class SearchDropDownTests extends TestBase {
     })
     void positiveTest(String value) {
         mainPage.openMyShows()
-                .clickLoginHeader()
                 .searchInput(value)
                 .searchDropDownList(value);
 
