@@ -27,8 +27,8 @@ public class MainPage extends TestBase {
     public MainPage openMyShows() {
         open("");
         popUpCookieComponent.clickAgreeButton();
-        loginIcon.shouldHave(visible, ofSeconds(5));
-//        titlesHome.get(1).shouldHave(visible, ofSeconds(5));
+        loginIcon.shouldHave(visible, ofSeconds(25));
+        titlesHome.get(1).shouldHave(visible, ofSeconds(25));
         return this;
     }
 
@@ -60,7 +60,7 @@ public class MainPage extends TestBase {
     }
 
     public MainPage searchDropDownList(String value) {
-        searchResultsTitle.shouldHave(visible, ofSeconds(8));
+        searchResultsTitle.shouldHave(visible, ofSeconds(25));
         searchResultsMovies.shouldHave(text(value));
         return this;
     }

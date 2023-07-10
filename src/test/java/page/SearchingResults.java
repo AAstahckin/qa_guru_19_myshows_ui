@@ -9,7 +9,7 @@ public class SearchingResults {
 
     ElementsCollection
             resultList = $$("[data-tid=result]"),
-            resultMoviesList = $$(".title__secondary ");
+            resultMoviesList = $$(".title__secondary");
 
     public SearchingResults checkSerialsListResults(String value){
         resultList.shouldHave(texts(value));
