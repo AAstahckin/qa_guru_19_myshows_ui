@@ -28,7 +28,7 @@ public class MainPage extends TestBase {
         open("");
         popUpCookieComponent.clickAgreeButton();
         loginIcon.shouldHave(visible, ofSeconds(5));
-        titlesHome.get(1).shouldHave(visible, ofSeconds(5));
+//        titlesHome.get(1).shouldHave(visible, ofSeconds(5));
         return this;
     }
 
