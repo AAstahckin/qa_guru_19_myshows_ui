@@ -15,7 +15,9 @@ public class PopUpCookieComponent {
 
     @Step("Принятие Cookie")
     public PopUpCookieComponent clickAgreeButton() {
-        agreeButton.shouldHave(visible, Duration.ofSeconds(5)).click();
+        if(agreeButton.isDisplayed()) {
+            agreeButton.shouldHave(visible, Duration.ofSeconds(5)).click();
+        }
         return this;
     }
 }

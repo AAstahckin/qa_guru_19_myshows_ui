@@ -17,6 +17,8 @@ public class MainPage extends TestBase {
             loginInput = $(".login-form__login"),
             homeSection = $(".Home-section .Grid-in"),
             titleMain = $(".title__main"),
+            searchInput = $(".Search-input"),
+            searchButton = $(".Search-submit"),
             passwordInput = $(".login-form__password");
 
     public MainPage openMyShows() {
@@ -39,6 +41,16 @@ public class MainPage extends TestBase {
 
     public MainPage checkTitle(String value){
         titleMain.shouldHave(Condition.text(value));
+        return this;
+    }
+
+    public MainPage searchInput(String value){
+        searchInput.setValue(value);
+        return this;
+    }
+
+    public MainPage searchButtonClick(){
+        searchButton.click();
         return this;
     }
 

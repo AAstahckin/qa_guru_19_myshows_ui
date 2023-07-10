@@ -9,6 +9,9 @@ import page.MainPage;
 import page.components.HeaderComponent;
 import java.util.stream.Stream;
 
+import static constants.AuthorizationTextError.ERROR_LOGIN_OR_PASSWORD;
+import static constants.AuthorizationTextError.ERROR_NOT_GOOD;
+
 public class AuthorizationTests extends TestBase {
 
     MainPage mainPage = new MainPage();
@@ -37,10 +40,10 @@ public class AuthorizationTests extends TestBase {
     private static Stream<Arguments> submitIncorrectParameters() {
         Faker faker = new Faker();
         return Stream.of(
-                Arguments.of(faker.internet().emailAddress(), faker.artist().name(), "Не правильный логин или пароль"),
-                Arguments.of("999999999", "999999999", "Не правильный логин или пароль"),
-                Arguments.of("", "", "Все пошло не очень..."),
-                Arguments.of("*&%#*@@,()_*@@", "*&%#*@@,()_*@@", "Не правильный логин или пароль"));
+                Arguments.of(faker.internet().emailAddress(), faker.artist().name(), ERROR_LOGIN_OR_PASSWORD.getErrorText()),
+                Arguments.of("999999999", "999999999", ERROR_LOGIN_OR_PASSWORD.getErrorText()),
+                Arguments.of("", "", ERROR_NOT_GOOD.getErrorText()),
+                Arguments.of("*&%#*@@,()_*@@", "*&%#*@@,()_*@@", ERROR_LOGIN_OR_PASSWORD.getErrorText()));
     }
 
 }

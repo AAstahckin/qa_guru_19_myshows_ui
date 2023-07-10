@@ -1,6 +1,6 @@
-package constants;
+package datatest;
 
-public enum TabsPages {
+public enum TabsPagesData {
 
     SERIALS("Сериалы", "Каталог сериалов"),
     MOVIES("Фильмы", "Каталог фильмов"),
@@ -11,7 +11,7 @@ public enum TabsPages {
     private String tabs;
     private String tittle;
 
-    TabsPages(String tabs, String tittle) {
+    TabsPagesData(String tabs, String tittle) {
         this.tabs = tabs;
         this.tittle = tittle;
     }

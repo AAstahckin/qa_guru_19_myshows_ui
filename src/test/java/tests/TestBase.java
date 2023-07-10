@@ -17,7 +17,7 @@ import java.util.Map;
 public class TestBase {
 
     public PopUpCookieComponent popUpCookieComponent = new PopUpCookieComponent();
-public HeaderComponent headerComponent = new HeaderComponent();
+    public HeaderComponent headerComponent = new HeaderComponent();
     @BeforeAll
     static void configure() {
 
