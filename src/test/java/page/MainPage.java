@@ -1,23 +1,21 @@
 package page;
 
-import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import tests.TestBase;
 
-import java.time.Duration;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static java.time.Duration.ofSeconds;
 
 public class MainPage extends TestBase {
 
     SelenideElement
             loginHeader = $(".Login-header"),
+            loginIcon = $(".Login-user .Icon"),
+            homeTitle = $(".Home-section .title__main"),
             loginInput = $(".login-form__login"),
-            homeSection = $(".Home-section .title__main"),
             titleMain = $(".title__main"),
             searchInput = $(".Search-input"),
             searchButton = $(".Search-submit"),
@@ -25,11 +23,13 @@ public class MainPage extends TestBase {
             searchResultsTitle = $(".search-results__title"),
             passwordInput = $(".login-form__password");
 
+    ElementsCollection titlesHome = $$(".Container .vue-horizontal .NewsItem__pic-wrapper");
+
     public MainPage openMyShows() {
         open("");
-        homeSection.shouldHave(visible, ofSeconds(8));
-
         popUpCookieComponent.clickAgreeButton();
+        loginIcon.shouldHave(visible, ofSeconds(5));
+        titlesHome.get(1).shouldHave(visible, ofSeconds(5));
         return this;
     }
 

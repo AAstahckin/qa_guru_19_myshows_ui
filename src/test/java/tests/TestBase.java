@@ -28,6 +28,7 @@ public class TestBase {
         Configuration.browserVersion = browser[1];
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
         Configuration.pageLoadTimeout = 30000;
+        Configuration.pageLoadStrategy = "normal";
         Configuration.remote = System.getProperty("selenoid_url");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -42,7 +43,6 @@ public class TestBase {
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Selenide.clearBrowserCookies();
     }
 
     @AfterEach
