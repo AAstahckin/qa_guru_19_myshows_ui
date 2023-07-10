@@ -16,7 +16,7 @@ public class MainPage extends TestBase {
             loginHeader = $(".Login-header"),
             loginInput = $(".login-form__login"),
             homeSection = $(".Home-section .Grid-in"),
-
+            titleMain = $(".title__main"),
             passwordInput = $(".login-form__password");
 
     public MainPage openMyShows() {
@@ -34,6 +34,11 @@ public class MainPage extends TestBase {
 
     public MainPage clickLoginHeader(){
         loginHeader.shouldHave(Condition.visible).hover().click();
+        return this;
+    }
+
+    public MainPage checkTitle(String value){
+        titleMain.shouldHave(Condition.text(value));
         return this;
     }
 

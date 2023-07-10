@@ -9,6 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import page.components.HeaderComponent;
 import page.components.PopUpCookieComponent;
 
 import java.util.Map;
@@ -16,7 +17,7 @@ import java.util.Map;
 public class TestBase {
 
     public PopUpCookieComponent popUpCookieComponent = new PopUpCookieComponent();
-
+public HeaderComponent headerComponent = new HeaderComponent();
     @BeforeAll
     static void configure() {
 

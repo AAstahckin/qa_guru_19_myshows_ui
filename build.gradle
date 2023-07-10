@@ -11,6 +11,7 @@ def selenideVersion = "6.13.0",
     allureVersion = "2.21.0",
     jUnitVersion = "5.9.3",
     javaFakerVersion = "1.0.2",
+        jupiterVersion = "5.9.2",
     slf4jVersion = "2.0.7"
 
 allure {
@@ -29,6 +30,7 @@ allure {
 
 dependencies {
     testImplementation(
+            "org.junit.jupiter:junit-jupiter:$jupiterVersion",
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "com.github.javafaker:javafaker:$javaFakerVersion",

@@ -16,9 +16,7 @@ public class AuthorizationTests extends TestBase {
 
     @Test
     void positiveTest() {
-
-        mainPage
-                .openMyShows()
+        mainPage.openMyShows()
                 .clickLoginHeader()
                 .setLoginPassword("testqa_guru_2023@mail.ru", "testqa_guru_2023");
         headerComponent.checkHeaderLogin("testqa_guru");
