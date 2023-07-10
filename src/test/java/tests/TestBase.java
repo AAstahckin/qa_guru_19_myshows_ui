@@ -43,6 +43,7 @@ public class TestBase {
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        Selenide.clearBrowserCookies();
     }
 
     @AfterEach

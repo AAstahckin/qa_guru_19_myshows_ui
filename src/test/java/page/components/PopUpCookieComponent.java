@@ -11,15 +11,12 @@ public class PopUpCookieComponent {
 
     SelenideElement
             agreeButtonCookie = $("[data-role=b_agree]"),
-            agreeWindowCookie = $("[data-role=first_layer]"),
-            homeSection = $(".Home-section .title__main");
+            agreeWindowCookie = $("[data-role=first_layer]");
 
     @Step("Принятие Cookie")
     public PopUpCookieComponent clickAgreeButton() {
         if(agreeWindowCookie.isDisplayed()) {
             agreeButtonCookie.shouldHave(visible, ofSeconds(5)).hover().click();
-            agreeButtonCookie.isEnabled();
-            homeSection.shouldHave(visible, ofSeconds(8));
         }
         return this;
     }
