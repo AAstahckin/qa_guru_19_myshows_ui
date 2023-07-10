@@ -56,7 +56,7 @@ public class MainPage extends TestBase {
     }
 
     public MainPage searchButtonClick() {
-        searchButton.click();
+        searchButton.hover().click();
         return this;
     }
 
