@@ -15,7 +15,7 @@ public class MainPage extends TestBase {
     SelenideElement
             loginHeader = $(".Login-header"),
             loginInput = $(".login-form__login"),
-            homeSection = $(".Home-section .Grid-in"),
+            homeSection = $(".Home-section .title__main"),
             titleMain = $(".title__main"),
             searchInput = $(".Search-input"),
             searchButton = $(".Search-submit"),
