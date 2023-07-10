@@ -18,6 +18,7 @@ public class PopUpCookieComponent {
     public PopUpCookieComponent clickAgreeButton() {
         if(agreeWindowCookie.isDisplayed()) {
             agreeButtonCookie.shouldHave(visible, ofSeconds(5)).hover().click();
+            agreeButtonCookie.isEnabled();
             homeSection.shouldHave(visible, ofSeconds(8));
         }
         return this;
