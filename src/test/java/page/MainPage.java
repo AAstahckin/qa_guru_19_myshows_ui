@@ -6,9 +6,11 @@ import tests.TestBase;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static java.time.Duration.ofSeconds;
 
 public class MainPage extends TestBase {
 
@@ -19,6 +21,8 @@ public class MainPage extends TestBase {
             titleMain = $(".title__main"),
             searchInput = $(".Search-input"),
             searchButton = $(".Search-submit"),
+            searchResultsMovies = $(".search-results__movies"),
+            searchResultsTitle = $(".search-results__title"),
             passwordInput = $(".login-form__password");
 
     public MainPage openMyShows() {
@@ -28,33 +32,39 @@ public class MainPage extends TestBase {
     }
 
     public MainPage checkTittle() {
-        homeSection.shouldHave(visible, Duration.ofSeconds(8));
+        homeSection.shouldHave(visible, ofSeconds(8));
         return this;
     }
 
-    public MainPage setLoginPassword(String login, String password){
+    public MainPage setLoginPassword(String login, String password) {
         loginInput.setValue(login);
         passwordInput.setValue(password).pressEnter();
         return this;
     }
 
-    public MainPage clickLoginHeader(){
-        loginHeader.shouldHave(Condition.visible).hover().click();
+    public MainPage clickLoginHeader() {
+        loginHeader.shouldHave(visible).hover().click();
         return this;
     }
 
-    public MainPage checkTitle(String value){
-        titleMain.shouldHave(Condition.text(value));
+    public MainPage checkTitle(String value) {
+        titleMain.shouldHave(text(value));
         return this;
     }
 
-    public MainPage searchInput(String value){
+    public MainPage searchInput(String value) {
         searchInput.setValue(value);
         return this;
     }
 
-    public MainPage searchButtonClick(){
+    public MainPage searchButtonClick() {
         searchButton.click();
+        return this;
+    }
+
+    public MainPage searchDropDownList(String value) {
+        searchResultsTitle.shouldHave(visible, ofSeconds(8));
+        searchResultsMovies.shouldHave(text(value));
         return this;
     }
 
