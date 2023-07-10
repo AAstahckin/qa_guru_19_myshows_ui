@@ -24,6 +24,10 @@ public class MainPage extends TestBase {
     public MainPage openMyShows() {
         open("");
         popUpCookieComponent.clickAgreeButton();
+        return this;
+    }
+
+    public MainPage checkTittle() {
         homeSection.shouldHave(visible, Duration.ofSeconds(8));
         return this;
     }
