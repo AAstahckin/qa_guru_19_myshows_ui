@@ -60,3 +60,9 @@ compileJava.options.encoding = 'UTF-8'
 test {
     useJUnitPlatform()
 }
+
+task sanity(type: Test) {
+    useJUnitPlatform {
+        includeTags("sanity")
+    }
+}

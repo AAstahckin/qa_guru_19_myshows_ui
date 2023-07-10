@@ -1,6 +1,7 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -18,6 +19,7 @@ public class AuthorizationTests extends TestBase {
     HeaderComponent headerComponent = new HeaderComponent();
 
     @Test
+    @Tag("sanity")
     void positiveTest() {
         mainPage.openMyShows()
                 .clickLoginHeader()

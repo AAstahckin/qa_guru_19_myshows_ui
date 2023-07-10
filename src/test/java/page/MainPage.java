@@ -14,7 +14,6 @@ public class MainPage extends TestBase {
     SelenideElement
             loginHeader = $(".Login-header"),
             loginIcon = $(".Login-user .Icon"),
-            homeTitle = $(".Home-section .title__main"),
             loginInput = $(".login-form__login"),
             titleMain = $(".title__main"),
             searchInput = $(".Search-input"),
