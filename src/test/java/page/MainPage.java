@@ -22,8 +22,9 @@ public class MainPage extends TestBase {
             searchButton = $(".Search-submit"),
             searchResultsMovies = $(".search-results__movies"),
             searchResultsTitle = $(".search-results__title"),
-            descriptionFavorites = $("Favorites-description"),
+            rowFavorites = $(".ShowCol-title"),
             headerTittle = $(".Container .title__main"),
+            myMovies = $(".unwatched-movies__show-title_title"),
             passwordInput = $(".login-form__password");
 
     ElementsCollection titlesHome = $$(".Container .vue-horizontal .NewsItem__pic-wrapper");
@@ -46,6 +47,22 @@ public class MainPage extends TestBase {
     public MainPage clickFavorites() {
         selectedSidebar.$(byText("Избранное")).hover().click();
         headerTittle.shouldHave(text("Избранное"), ofSeconds(15));
+        return this;
+    }
+
+    public MainPage clickMyFilms() {
+        selectedSidebar.$(byText("Мои фильмы")).hover().click();
+        headerTittle.shouldHave(text("Мои фильмы"), ofSeconds(15));
+        return this;
+    }
+
+    public MainPage checkFavorites(String value) {
+        rowFavorites.shouldHave(text(value));
+        return this;
+    }
+
+    public MainPage checkMyMovies(String value) {
+        myMovies.shouldHave(text(value));
         return this;
     }
 

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import page.MainPage;
 
-public class FavoritesTest extends TestBase {
+public class MyFilmsTest extends TestBase {
 
     MainPage mainPage = new MainPage();
 
@@ -14,9 +14,10 @@ public class FavoritesTest extends TestBase {
         mainPage.openMyShows()
                 .clickLoginHeader()
                 .setLoginPassword("testqa_guru_2023@mail.ru", "testqa_guru_2023")
-                .clickFavorites()
-                .checkFavorites("Шерлок");
+                .clickMyFilms()
+                .checkMyMovies("Начало");
 
     }
+
 
 }
