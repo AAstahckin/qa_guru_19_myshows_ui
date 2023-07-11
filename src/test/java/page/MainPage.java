@@ -6,6 +6,7 @@ import tests.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static java.time.Duration.ofSeconds;
 
@@ -17,9 +18,12 @@ public class MainPage extends TestBase {
             loginInput = $(".login-form__login"),
             titleMain = $(".title__main"),
             searchInput = $(".Search-input"),
+            selectedSidebar = $(".DefaultLayout-sidebar"),
             searchButton = $(".Search-submit"),
             searchResultsMovies = $(".search-results__movies"),
             searchResultsTitle = $(".search-results__title"),
+            descriptionFavorites = $("Favorites-description"),
+            headerTittle = $(".Container .title__main"),
             passwordInput = $(".login-form__password");
 
     ElementsCollection titlesHome = $$(".Container .vue-horizontal .NewsItem__pic-wrapper");
@@ -37,6 +41,14 @@ public class MainPage extends TestBase {
         passwordInput.setValue(password).pressEnter();
         return this;
     }
+
+
+    public MainPage clickFavorites() {
+        selectedSidebar.$(byText("Избранное")).hover().click();
+        headerTittle.shouldHave(text("Избранное"), ofSeconds(15));
+        return this;
+    }
+
 
     public MainPage clickLoginHeader() {
         loginHeader.shouldHave(visible).hover().click();

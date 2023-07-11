@@ -8,7 +8,6 @@ import page.MainPage;
 public class SearchDropDownTests extends TestBase {
 
     MainPage mainPage = new MainPage();
-    @Tag("sanity")
     @ParameterizedTest(name = "[{0}]")
     @ValueSource(strings = {
             "Первый мститель", "Симпсоны в кино", "Мира", "Первый мститель",

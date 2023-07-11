@@ -31,7 +31,7 @@ public class TestBase {
         Configuration.pageLoadStrategy = "normal";
         Configuration.remote = System.getProperty("selenoid_url");
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+                DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true

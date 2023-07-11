@@ -13,7 +13,6 @@ public class PopUpCookieComponent {
             agreeButtonCookie = $("[data-role=b_agree]"),
             agreeWindowCookie = $("[data-role=first_layer]");
 
-    @Step("Принятие Cookie")
     public PopUpCookieComponent clickAgreeButton() {
         if(agreeWindowCookie.isDisplayed()) {
             agreeButtonCookie.shouldHave(visible, ofSeconds(25)).hover().click();

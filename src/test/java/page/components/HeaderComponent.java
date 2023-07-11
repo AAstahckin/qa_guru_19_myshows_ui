@@ -16,13 +16,11 @@ public class HeaderComponent {
             headerMenu = $(".Header-left"),
             loginHeader = $(".Login-header");
 
-    @Step("Проверяем пользователя в header")
     public HeaderComponent checkHeaderLogin(String login) {
         loginHeader.shouldHave(text(login));
         return this;
     }
 
-    @Step("Проверяем ошибку авторизации")
     public HeaderComponent loginError(String errorText) {
         loginError.shouldHave(text(errorText));
         return this;

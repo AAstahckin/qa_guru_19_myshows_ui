@@ -8,7 +8,7 @@ repositories {
 }
 
 def selenideVersion = "6.13.0",
-    allureVersion = "2.21.0",
+    allureVersion = "2.22.1",
     jUnitVersion = "5.9.3",
     javaFakerVersion = "1.0.2",
         jupiterVersion = "5.9.2",
